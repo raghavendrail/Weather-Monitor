@@ -35,6 +35,8 @@ public class WeatherService {
 	private DailyWeatherSummaryRepository dailyWeatherSummaryRepository;
 
 	private final RestTemplate restTemplate = new RestTemplate();
+	
+	private static final String API_KEY = "e5331d93884e6ee398563a2a6d56114e"; 
 
 	@Value("${weather.api.url}")
 	private String weatherApiUrl;
@@ -44,6 +46,8 @@ public class WeatherService {
 
 	@Autowired
 	private JavaMailSender emailSender;
+	
+	
 
 	private final List<String> triggeredAlerts = new ArrayList<>();
 
@@ -91,6 +95,8 @@ public class WeatherService {
 
 		String url = UriComponentsBuilder.fromHttpUrl(weatherApiUrl).queryParam("lat", lat).queryParam("lon", lon)
 				.queryParam("appid", apiKey).toUriString();
+	
+
 
 		try {
 			Map<String, Object> response = restTemplate.getForObject(url, Map.class);

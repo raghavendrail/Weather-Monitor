@@ -18,4 +18,6 @@ public interface WeatherRepository extends JpaRepository<WeatherData, Long> {
     List<WeatherData> findWeatherDataByCityAndTimestamp(@Param("cities") List<String> cities, @Param("timestamp") LocalDateTime timestamp);
     
     List<WeatherData> findAllByCityInAndDateBetween(List<String> cities, LocalDate startDate, LocalDate endDate);
+    
+    
 }

@@ -22,6 +22,7 @@ public class WeatherData {
     private String weatherCondition;
     private LocalDate date; 
     private LocalDateTime timestamp;
+    
 
     public Long getId() {
         return id;
